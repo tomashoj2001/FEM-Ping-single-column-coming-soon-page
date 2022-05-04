@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+    --Blue: hsl(223, 87%, 63%);
+    --Pale-Blue: hsl(223, 100%, 88%);
+    --Light-Red: hsl(354, 100%, 66%);
+    --Gray: hsl(0, 0%, 59%);
+    --Very-Dark-Blue: hsl(209, 33%, 12%);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: red 1px solid; */
+}
+
+body {
+    font-size: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+    text-align: center;
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 5rem;
+    display: block;
+}
+
+main {
+    width: 90vw;
+    margin-top: 5rem;
+}
+
+.title {
+    font-weight: 300;
+    color: var(--Gray);
+}
+
+span {
+    font-weight: 700;
+    color: var(--Very-Dark-Blue);
+}
+
+.text {
+    margin: 2rem auto 3rem;    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 95%;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+}
+
+.email{
+    padding-left: 1.25rem;
+    border: 2px solid var(--Pale-Blue);
+}
+
+.email::placeholder {
+    font-family: 'Libre Franklin', sans-serif;;
+    color: var(--Gray);
+}
+
+/* .email:target {
+    border: 2px solid var(--Pale-Blue);
+} */
+
+.email.active {
+    border: 2px solid var(--Light-Red);
+}
+
+.submit {
+    margin: 1rem auto 5rem;
+    color: white;
+    font-weight: 600;
+    background-color: var(--Blue);
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.submit:hover{
+    background-color: var(--Pale-Blue);
+}
+
+.submit.active {
+    margin-bottom: 2.2rem;
+}
+
+.error {
+    color: var(--Light-Red);
+    margin: 1rem auto;
+    font-size: 12px;
+    font-style: oblique;
+    display: none;
+}
+
+.error.active {
+    display: block;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 8rem auto 2rem;
+}
+
+li {
+    height: 36px;
+    width: 36px;
+    border: 1px solid var(--Gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+li:hover {
+    background-color: var(--Blue);
+}
+
+
+li svg {
+    fill: var(--Blue);
+    transition: all 0.15s ease;
+}
+
+li:hover svg {
+    fill: white;
+}
+
+h4 {
+    font-size: 12px;
+    color: var(--Gray);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+
+        /* RESPONSIVE DESIGN*/
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: auto;
+    }
+    .logo {
+        margin-top: 4rem;
+    }
+    main {
+        width: 50vw;
+        margin-top: 4rem;
+    }
+    .text {
+        margin: 2rem auto;    
+    }
+    form {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 65% 35%;
+        margin-bottom: 3rem;
+    }
+    .email {
+        margin: 0;
+    }
+    .submit {
+        margin: 0;
+    }
+    .submit.active {
+        margin: 0;
+    }
+    .error {
+        order: 1;
+        margin: 1rem 0 -3rem;
+        width: 95%;
+    }
+    ul {
+        margin: 3rem auto 1.5rem;
+    }
+}
